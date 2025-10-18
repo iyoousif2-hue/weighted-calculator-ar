@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://weighted-calculator-p9fdepuxt-yousif-ahmeds-projects-6ee2ff57.vercel.app/sitemap.xml

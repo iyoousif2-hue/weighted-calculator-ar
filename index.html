@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>حاسبة النسبة الموزونة للقبول | قدرات وتحصيلي وثانوي</title>
+  <meta name="description" content="حاسبة مجانية لحساب النسبة الموزونة للقبول الجامعي في السعودية: أدخل درجات القدرات والتحصيلي والثانوي، وعدّل نسبة كل عنصر (مثل 30%/50%/20%) لتحصل على نتيجتك فورًا. تدعم العربية و RTL ونماذج جاهزة.">
+  <meta name="keywords" content="حاسبة النسبة الموزونة, حساب النسبة الموزونة, القبول الجامعي, القدرات, التحصيلي, الثانوية العامة, الجامعات السعودية, weighted admission calculator">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="حاسبة النسبة الموزونة للقبول">
+  <meta property="og:description" content="احسب نسبتك الموزونة بسهولة: قدرات، تحصيلي، ثانوي مع تحكم كامل في النسب.">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:url" content="https://weighted-calculator-p9fdepuxt-yousif-ahmeds-projects-6ee2ff57.vercel.app/">
+  <link rel="canonical" href="https://weighted-calculator-p9fdepuxt-yousif-ahmeds-projects-6ee2ff57.vercel.app/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="حاسبة النسبة الموزونة للقبول">
+  <meta name="twitter:description" content="حاسبة سهلة لحساب النسبة الموزونة للقبول الجامعي (قدرات/تحصيلي/ثانوي).">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "حاسبة النسبة الموزونة للقبول",
+    "url": "https://weighted-calculator-p9fdepuxt-yousif-ahmeds-projects-6ee2ff57.vercel.app/",
+    "description": "حاسبة مجانية لحساب النسبة الموزونة للقبول الجامعي (قدرات/تحصيلي/ثانوي) مع إمكانية تعديل النسب.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "offers": {{ "@type": "Offer", "price": 0, "priceCurrency": "SAR" }}
+  }}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card{{border:1px solid #e5e7eb;border-radius:1rem;box-shadow:0 1px 2px rgba(0,0,0,0.04);background:#fff}}
+    .btn{{display:inline-flex;align-items:center;gap:.5rem;border-radius:1rem;padding:.6rem 1rem;border:1px solid #e5e7eb;background:#fff}}
+    .btn-primary{{background:#111827;color:#fff;border-color:#111827}}
+    .btn-danger{{background:#dc2626;color:#fff;border-color:#dc2626}}
+    .input{{border:1px solid #e5e7eb;border-radius:.75rem;padding:.55rem .8rem;width:100%}}
+    .grid-h{{display:grid;grid-template-columns:5fr 2fr 3fr 2fr;gap:.75rem}}
+    .grid-r{{display:grid;grid-template-columns:5fr 2fr 3fr 2fr;gap:.75rem;align-items:center}}
+    @media (max-width: 640px){{ .grid-h,.grid-r{{grid-template-columns:1fr}} }}
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-zinc-50 to-zinc-100 p-6">
+  <main class="max-w-4xl mx-auto space-y-6">
+    <header class="flex items-center justify-between">
+      <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">حاسبة النسبة الموزونة</h1>
+      <div class="flex items-center gap-2">
+        <select id="preset" class="input w-56" aria-label="النماذج الجاهزة">
+          <option value="custom">مخصص</option>
+          <option value="p1">30% قدرات · 50% تحصيلي · 20% ثانوي</option>
+          <option value="p2">40% قدرات · 40% تحصيلي · 20% ثانوي</option>
+          <option value="p3">40% قدرات · 30% تحصيلي · 30% ثانوي</option>
+        </select>
+        <button id="toggleDir" class="btn" title="تبديل الاتجاه RTL/LTR">LTR</button>
+      </div>
+    </header>
+
+    <section class="card p-4 md:p-6 leading-8">
+      <h2 class="text-xl font-semibold mb-2">ما هي حاسبة النسبة الموزونة؟</h2>
+      <p>
+        هذه أداة مجانية لمساعدة الطلاب على <strong>حساب النسبة الموزونة للقبول</strong> في الجامعات السعودية.
+        يمكنك إدخال درجات <strong>القدرات</strong> و<strong>التحصيلي</strong> و<strong>الثانوي</strong>،
+        ثم تحديد <strong>النسبة</strong> لكل عنصر (مثل: 30%، 50%، 20%).
+        تدعم الأداة اللغة العربية والاتجاه من اليمين إلى اليسار، وتحتوي على نماذج جاهزة قابلة للتعديل،
+        بالإضافة إلى إمكانية إضافة عناصر جديدة مثل <em>المقابلة الشخصية</em> أو <em>اختبار اللغة</em> عند الحاجة.
+      </p>
+    </section>
+
+    <section class="card p-4 md:p-6">
+      <div class="grid-h text-sm font-medium text-zinc-700">
+        <div>الجهة / العنصر</div>
+        <div>النسبة (%)</div>
+        <div>الدرجة (0–100)</div>
+        <div class="text-center">إزالة</div>
+      </div>
+      <div id="rows" class="space-y-3 mt-3"></div>
+
+      <div class="flex items-center justify-between mt-4">
+        <div class="text-sm text-zinc-600">
+          مجموع النسب: <span id="total" class="text-emerald-600">0%</span>
+          <span id="warn" class="ml-2 text-rose-600 hidden">(يجب أن يساوي 100%)</span>
+        </div>
+        <div class="flex gap-2">
+          <button id="add" class="btn btn-primary">إضافة عنصر</button>
+          <button id="reset" class="btn">تصفير الدرجات</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card p-4 md:p-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-lg md:text-xl font-semibold">الناتج النهائي</div>
+          <div class="text-sm text-zinc-600">النسبة الموزونة = مجموع (الدرجة × النسبة ÷ 100)</div>
+        </div>
+        <div class="text-3xl md:text-5xl font-bold tracking-tight"><span id="result">—</span></div>
+      </div>
+      <div id="invalidMsg" class="mt-4 text-sm text-rose-600 hidden">
+        الرجاء ضبط النسب بحيث يكون مجموعها 100% لظهور النتيجة.
+      </div>
+    </section>
+
+    <footer class="text-xs text-zinc-500 text-center py-4">
+      صُنعت لأجل الطلاب — تدعم العربية و RTL — تحديث: 2025-10-18
+    </footer>
+  </main>
+
+  <template id="rowTemplate">
+    <div class="grid-r">
+      <input class="input name" value="" aria-label="اسم العنصر">
+      <input class="input weight" type="number" min="0" max="100" value="0" aria-label="النسبة">
+      <input class="input score" type="number" min="0" max="100" value="0" aria-label="الدرجة">
+      <div class="flex justify-center">
+        <button class="btn btn-danger remove">حذف</button>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    const rows = document.getElementById('rows');
+    const tmpl = document.getElementById('rowTemplate');
+    const totalEl = document.getElementById('total');
+    const warnEl = document.getElementById('warn');
+    const resultEl = document.getElementById('result');
+    const invalidMsg = document.getElementById('invalidMsg');
+    const addBtn = document.getElementById('add');
+    const resetBtn = document.getElementById('reset');
+    const presetSel = document.getElementById('preset');
+    const toggleDir = document.getElementById('toggleDir');
+
+    function addRow(name, weight, score){
+      const node = tmpl.content.cloneNode(true);
+      const r = node.querySelector('.grid-r');
+      const nameI = node.querySelector('.name');
+      const weightI = node.querySelector('.weight');
+      const scoreI = node.querySelector('.score');
+      const removeB = node.querySelector('.remove');
+      nameI.value = name || 'عنصر جديد';
+      weightI.value = Number(weight) || 0;
+      scoreI.value = Number(score) || 0;
+      const onChange = () => { clampInputs(weightI, scoreI); compute(); save(); };
+      [nameI, weightI, scoreI].forEach(el => el.addEventListener('input', onChange));
+      removeB.addEventListener('click', () => { r.remove(); compute(); save(); });
+      rows.appendChild(node);
+    }
+
+    function clampInputs(weightI, scoreI){
+      weightI.value = clamp(Number(weightI.value), 0, 100);
+      scoreI.value = clamp(Number(scoreI.value), 0, 100);
+    }
+
+    function clamp(n, a, b){ return Math.max(a, Math.min(b, isFinite(n) ? n : a)); }
+    function round2(n){ return Math.round(n * 100) / 100; }
+
+    function compute(){
+      const items = [...rows.querySelectorAll('.grid-r')].map(r => ({
+        name: r.querySelector('.name').value.trim(),
+        weight: Number(r.querySelector('.weight').value) || 0,
+        score: Number(r.querySelector('.score').value) || 0,
+      }));
+
+      const total = items.reduce((s,c)=> s + c.weight, 0);
+      totalEl.textContent = total + '%';
+      const valid = total === 100;
+      warnEl.classList.toggle('hidden', valid);
+      invalidMsg.classList.toggle('hidden', valid);
+
+      const weighted = items.reduce((s,c)=> s + (c.score * c.weight / 100), 0);
+      resultEl.textContent = valid ? (round2(weighted) + '%') : '—';
+    }
+
+    function save(){
+      const data = [...rows.querySelectorAll('.grid-r')].map(r => ({
+        name: r.querySelector('.name').value,
+        weight: r.querySelector('.weight').value,
+        score: r.querySelector('.score').value,
+      }));
+      localStorage.setItem('weightedCalcData', JSON.stringify(data));
+    }
+
+    function load(){
+      const raw = localStorage.getItem('weightedCalcData');
+      if(raw){
+        try{
+          const data = JSON.parse(raw);
+          rows.innerHTML = '';
+          data.forEach(d => addRow(d.name, d.weight, d.score));
+          compute();
+          return;
+        }catch(e){}
+      }
+      rows.innerHTML = '';
+      addRow('القدرات', 30, 0);
+      addRow('التحصيلي', 50, 0);
+      addRow('الثانوي', 20, 0);
+      compute();
+    }
+
+    function applyPreset(key){
+      if(key === 'p1'){
+        rows.innerHTML='';
+        addRow('القدرات', 30, 0);
+        addRow('التحصيلي', 50, 0);
+        addRow('الثانوي', 20, 0);
+      } else if(key === 'p2'){
+        rows.innerHTML='';
+        addRow('القدرات', 40, 0);
+        addRow('التحصيلي', 40, 0);
+        addRow('الثانوي', 20, 0);
+      } else if(key === 'p3'){
+        rows.innerHTML='';
+        addRow('القدرات', 40, 0);
+        addRow('التحصيلي', 30, 0);
+        addRow('الثانوي', 30, 0);
+      }
+      compute(); save();
+    }
+
+    addBtn.addEventListener('click', ()=>{ addRow('عنصر جديد', 0, 0); compute(); save(); });
+    resetBtn.addEventListener('click', ()=>{
+      [...rows.querySelectorAll('.grid-r .score')].forEach(i=> i.value = 0);
+      compute(); save();
+    });
+    presetSel.addEventListener('change', e=> applyPreset(e.target.value));
+
+    toggleDir.addEventListener('click', ()=>{
+      const html = document.documentElement;
+      if(html.dir === 'rtl'){ html.dir = 'ltr'; toggleDir.textContent = 'RTL'; }
+      else { html.dir = 'rtl'; toggleDir.textContent = 'LTR'; }
+    });
+
+    load();
+  </script>
+</body>
+</html>
